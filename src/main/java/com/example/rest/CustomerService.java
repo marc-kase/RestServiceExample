@@ -20,7 +20,7 @@ public class CustomerService {
     public String getAllCustomers() {
         return "---Customer List---\n"
                 + cList.stream()
-                .map(c -> c.toString())
+                .map(Customer::toString)
                 .collect(Collectors.joining("\n"));
     }
 
