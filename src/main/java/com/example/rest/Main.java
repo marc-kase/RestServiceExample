@@ -38,6 +38,8 @@ public class Main{
         // in com.example.rest package
         final ResourceConfig rc = new ResourceConfig().packages("com.example.rest");
 
+        rc.register(com.example.rest.AuthFilter.class, 6000);
+
         // create and start a new instance of grizzly http server
         // exposing the Jersey application at BASE_URI
         return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
